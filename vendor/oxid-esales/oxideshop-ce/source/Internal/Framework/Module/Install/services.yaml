@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+
+  oxid_esales.module.install.service.launched_shop_project_configuration_generator:
+    class: OxidEsales\EshopCommunity\Internal\Framework\Module\Install\Service\ProjectConfigurationGenerator
+    arguments:
+      $context: '@OxidEsales\EshopCommunity\Internal\Transition\Utility\ContextInterface'
+    public: true
+
+  OxidEsales\EshopCommunity\Internal\Framework\Module\Install\Service\ModuleInstallerInterface:
+    class: OxidEsales\EshopCommunity\Internal\Framework\Module\Install\Service\ModuleInstaller
+    arguments:
+      - '@oxid_esales.module.install.service.bootstrap_module_installer'
+    public: true

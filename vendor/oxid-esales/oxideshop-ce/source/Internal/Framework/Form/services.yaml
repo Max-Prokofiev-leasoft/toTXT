@@ -1,0 +1,6 @@
+services:
+  _defaults:
+    autowire: true
+
+  common.form.required_fields_validator:
+    class: OxidEsales\EshopCommunity\Internal\Framework\Form\RequiredFieldsValidator
