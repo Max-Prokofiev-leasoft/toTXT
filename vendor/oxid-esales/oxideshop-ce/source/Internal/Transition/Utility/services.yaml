@@ -1,7 +1,0 @@
-services:
-  _defaults:
-    autowire: true
-
-  OxidEsales\EshopCommunity\Internal\Transition\Utility\ContextInterface:
-    class: OxidEsales\EshopCommunity\Internal\Transition\Utility\Context
-    public: true
