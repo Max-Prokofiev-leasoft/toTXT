@@ -30,7 +30,7 @@ class WebhookController extends WidgetControl
         parent::__construct();
         require_once PSPConfig::AUTOLOAD_FILE;
         $this->gingerApiHelper = GingerApiHelper::getInstance();
-        $this->paymentHelper = new PaymentHelper();
+        $this->paymentHelper = PaymentHelper::getInstance();
 
     }
 

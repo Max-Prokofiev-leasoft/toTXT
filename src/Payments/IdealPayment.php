@@ -21,7 +21,7 @@ class IdealPayment implements BasePaymentInterface
      */
     public function __construct()
     {
-        $this->paymentHelper = new PaymentHelper();
+        $this->paymentHelper = PaymentHelper::getInstance();
     }
 
     /**

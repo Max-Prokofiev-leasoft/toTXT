@@ -22,7 +22,7 @@ $aModule = [
     'email' => 'max.prokofiev@leasoft.org',
     'extend' => [
         oxpaymentgateway::class => \GingerPayments\Payments\Model\PaymentGateway::class,
-        \OxidEsales\Eshop\Application\Controller\OrderController::class => GingerPayments\Payments\Controller\ModuleOrderController::class,
+        order::class => GingerPayments\Payments\Controller\ModuleOrderController::class,
         payment::class => GingerPayments\Payments\Controller\ModulePaymentController::class,
     ],
     'controllers' => [

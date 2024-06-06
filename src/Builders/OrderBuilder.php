@@ -9,7 +9,10 @@ use GingerPluginSdk\Entities\PaymentMethodDetails;
 use GingerPluginSdk\Entities\Transaction;
 use GingerPluginSdk\Properties\Amount;
 use GingerPluginSdk\Properties\Currency;
+use GingerPluginSdk\Properties\RawCost;
+use OxidEsales\Eshop\Core\Exception\LanguageNotFoundException;
 use OxidEsales\EshopCommunity\Application\Model\Order as OxidOrder;
+use OxidEsales\EshopCommunity\Core\Registry;
 
 class OrderBuilder
 {
@@ -39,6 +42,7 @@ class OrderBuilder
      *
      * @return Order
      * - SDK order object
+     * @throws LanguageNotFoundException
      */
     public function buildOrder(): Order
     {
@@ -53,7 +57,6 @@ class OrderBuilder
             client: $this->gingerApiHelper->getClientExtra(),
             webhook_url: $this->webhookUrl,
             return_url: $this->returnUrl,
-            id: $this->order->getId(),
             merchantOrderId: $this->order->getId(),
             description: $this->buildDescription($this->order),
         );
@@ -82,7 +85,7 @@ class OrderBuilder
      */
     private function buildAmount(float $totalAmount): Amount
     {
-        return new Amount(value: (int)($totalAmount * 100));
+        return new Amount(value: new RawCost(value: $totalAmount));
     }
 
     /**

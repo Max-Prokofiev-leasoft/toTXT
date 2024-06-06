@@ -18,12 +18,27 @@ class PaymentHelper
 {
     protected GingerApiHelper $gingerApiHelper;
 
+    private static ?PaymentHelper $instance = null;
+
     /**
      * Constructor to initialize GingerApiHelper.
      */
-    public function __construct()
+    private function __construct()
     {
         $this->gingerApiHelper = GingerApiHelper::getInstance();
+    }
+
+    /**
+     * Retrieves the single instance of this class.
+     *
+     * @return PaymentHelper
+     */
+    public static function getInstance(): PaymentHelper
+    {
+        if (self::$instance === null) {
+            self::$instance = new PaymentHelper();
+        }
+        return self::$instance;
     }
 
     /**
@@ -102,7 +117,7 @@ class PaymentHelper
             'processing' => 'PROCESSING',
             'cancelled' => 'CANCELLED',
             'expired' => 'EXPIRED',
-            default => 'NEW',
+            default => 'PENDING',
         };
     }
 
@@ -140,7 +155,7 @@ class PaymentHelper
      */
     private function getWebhookUrl(string $orderId): string
     {
-        $shopUrl = "https://a6a1-193-109-145-122.ngrok-free.app" . "/";
+        $shopUrl = "https://e85f-2a02-2378-1082-2fc6-4c6b-89c6-462e-c8cb.ngrok-free.app" . "/";
         return $shopUrl . "widget.php/?cl=webhook&ox_order=" . $orderId;
     }
 }

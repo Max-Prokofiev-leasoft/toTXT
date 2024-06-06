@@ -27,7 +27,7 @@ class ModuleOrderController extends OrderController
     {
         parent::__construct();
         require_once PSPConfig::AUTOLOAD_FILE;
-        $this->paymentHelper = new PaymentHelper();
+        $this->paymentHelper = PaymentHelper::getInstance();
     }
 
     /**
