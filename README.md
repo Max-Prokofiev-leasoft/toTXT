@@ -1,0 +1,1 @@
+# Ginger Payments extension

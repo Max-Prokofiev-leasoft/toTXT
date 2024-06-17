@@ -1,0 +1,20 @@
+services:
+  _defaults:
+    autowire: true
+
+  OxidEsales\EshopCommunity\Internal\Domain\Authentication\Bridge\PasswordServiceBridgeInterface:
+    class: OxidEsales\EshopCommunity\Internal\Domain\Authentication\Bridge\PasswordServiceBridge
+    public: true
+
+  OxidEsales\EshopCommunity\Internal\Domain\Authentication\Service\PasswordVerificationServiceInterface:
+    class: OxidEsales\EshopCommunity\Internal\Domain\Authentication\Service\PasswordVerificationService
+
+  OxidEsales\EshopCommunity\Internal\Utility\Authentication\Policy\PasswordPolicyInterface:
+    class: OxidEsales\EshopCommunity\Internal\Utility\Authentication\Policy\PasswordPolicy
+
+  OxidEsales\EshopCommunity\Internal\Domain\Authentication\Generator\RandomTokenGeneratorInterface:
+    class: OxidEsales\EshopCommunity\Internal\Domain\Authentication\Generator\RandomTokenGenerator
+
+  OxidEsales\EshopCommunity\Internal\Domain\Authentication\Bridge\RandomTokenGeneratorBridgeInterface:
+    class: OxidEsales\EshopCommunity\Internal\Domain\Authentication\Bridge\RandomTokenGeneratorBridge
+    public: true

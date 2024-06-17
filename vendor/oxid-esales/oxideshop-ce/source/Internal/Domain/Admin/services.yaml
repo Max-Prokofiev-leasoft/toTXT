@@ -1,0 +1,5 @@
+imports:
+    - { resource: Dao/services.yaml }
+    - { resource: Factory/services.yaml }
+    - { resource: Service/services.yaml }
+    - { resource: Command/services.yaml }

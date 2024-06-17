@@ -1,0 +1,17 @@
+imports:
+  - { resource: Logger/services.yaml }
+
+services:
+  _defaults:
+    autowire: true
+
+  OxidEsales\EshopCommunity\Internal\Framework\Database\ConnectionProviderInterface:
+    class: OxidEsales\EshopCommunity\Internal\Framework\Database\ConnectionProvider
+    public: true
+
+  OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactoryInterface:
+    class: OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactory
+    public: true
+
+  OxidEsales\EshopCommunity\Internal\Framework\Database\TransactionServiceInterface:
+    class: OxidEsales\EshopCommunity\Internal\Framework\Database\TransactionService
