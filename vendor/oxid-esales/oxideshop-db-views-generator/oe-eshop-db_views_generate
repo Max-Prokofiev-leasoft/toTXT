@@ -1,4 +1,0 @@
-#!/usr/bin/env php
-<?php
-
-require_once('generate_views.php');

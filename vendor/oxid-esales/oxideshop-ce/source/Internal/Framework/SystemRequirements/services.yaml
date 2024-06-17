@@ -1,6 +1,0 @@
-services:
-  _defaults:
-    autowire: true
-
-  OxidEsales\EshopCommunity\Internal\Framework\SystemRequirements\SystemSecurityCheckerInterface:
-    class: OxidEsales\EshopCommunity\Internal\Framework\SystemRequirements\SystemSecurityChecker
